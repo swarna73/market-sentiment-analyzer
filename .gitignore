@@ -1,0 +1,38 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Configuration files with secrets
+config.py
+
+# Reports and logs
+reports/
+logs/
+*.log
+*.txt
+*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Email test files
+test_*.py
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
