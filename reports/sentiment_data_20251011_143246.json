@@ -1,0 +1,232 @@
+[
+  {
+    "ticker": "TSLA",
+    "company": "Tesla",
+    "sentiment_score": 0.462,
+    "article_count": 13,
+    "positive_articles": 6,
+    "neutral_articles": 7,
+    "negative_articles": 0,
+    "articles": [
+      {
+        "title": "Tesla\u2019s China Shipments Rise at Start of Busy Sales Season",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/1529e362a4f80b52",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:41:36Z"
+      },
+      {
+        "title": "Tesla Cybercab Spotted At Gigafactory Texas And California After Affordable Model Y, Model 3 Trims Launch",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/8fc1e553acac675b",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:30:31Z"
+      },
+      {
+        "title": "BMW India achieves best-ever sales with GST 2.0 boost: iX1 top EV model",
+        "source": "The Times of India",
+        "url": "https://timesofindia.indiatimes.com/auto/news/bmw-india-achieves-best-ever-sales-with-gst-2-0-boost-ix1-top-ev-model/articleshow/124454200.cms",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:29:21Z"
+      },
+      {
+        "title": "NBA GMs double down on Victor Wembanyama signaling Spurs\u2019 7-foot-5 star is a generational talent",
+        "source": "The Times of India",
+        "url": "https://timesofindia.indiatimes.com/sports/nba/top-stories/nba-gms-double-down-on-victor-wembanyama-signaling-spurs-7-foot-5-star-is-a-generational-talent/articleshow/124454124.cms",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:26:38Z"
+      },
+      {
+        "title": "Shrenu Parikh on Karwa Chauth: It\u2019s about celebrating togetherness, love and having fun while doing it",
+        "source": "The Times of India",
+        "url": "https://timesofindia.indiatimes.com/tv/news/hindi/shrenu-parikh-on-karwa-chauth-its-about-celebrating-togetherness-love-and-having-fun-while-doing-it/articleshow/124454129.cms",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:23:32Z"
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Google",
+    "sentiment_score": 0.25,
+    "article_count": 12,
+    "positive_articles": 3,
+    "neutral_articles": 9,
+    "negative_articles": 0,
+    "articles": [
+      {
+        "title": "Jim Cramer Explains Why Alphabet (GOOGL) Dominates In Its Industry",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-explains-why-alphabet-014127012.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:41:27Z"
+      },
+      {
+        "title": "\u2018Of course we\u2019re looking into other markets\u2019: Fairphone CEO on expansion plans and the unique challenges of the US market",
+        "source": "TechRadar",
+        "url": "https://www.techradar.com/phones/of-course-were-looking-into-other-markets-fairphone-ceo-on-expansion-plans-and-the-unique-challenges-of-the-us-market",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:28:07Z"
+      },
+      {
+        "title": "Xbox Next Is Rumored to Target 2027 Launch; Partial Specs Leaked",
+        "source": "Wccftech",
+        "url": "https://wccftech.com/xbox-next-2027-launch-rumor/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:26:48Z"
+      },
+      {
+        "title": "AI Stocks- After Data Center Construction Boom, Will Profits Flow",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/ai-stocks-data-center-construction-050100480.html",
+        "sentiment": 0.0,
+        "published_at": "2025-10-10T05:01:00Z"
+      },
+      {
+        "title": "Can Wells Fargo keep our money after a scammer stole it through Zelle?",
+        "source": "Elliott.org",
+        "url": "https://www.elliott.org/problem-solved/can-wells-fargo-keep-our-money-after-a-scammer-stole-it-through-zelle/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:30:00Z"
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft",
+    "sentiment_score": 0.231,
+    "article_count": 13,
+    "positive_articles": 4,
+    "neutral_articles": 8,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "Bitcoin Miners Rally in Pre-Market as Sector Nears $90B Market Cap",
+        "source": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2025/10/10/bitcoin-miners-rally-in-pre-market-as-sector-nears-usd90b-market-cap",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T09:24:08Z"
+      },
+      {
+        "title": "Xbox Next Is Rumored to Target 2027 Launch; Partial Specs Leaked",
+        "source": "Wccftech",
+        "url": "https://wccftech.com/xbox-next-2027-launch-rumor/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:26:48Z"
+      },
+      {
+        "title": "Beyond the refresh: Your cyber strategy must include AI PCs",
+        "source": "ComputerWeekly.com",
+        "url": "https://www.computerweekly.com/opinion/Beyond-the-refresh-Your-cyber-strategy-must-include-AI-PCs",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:11:00Z"
+      },
+      {
+        "title": "Search News Buzz Video Recap: Google Search Ranking Volatility, AI Mode Expands Again, Business Profiles Insights, Bing Places Updates & Google and Microsoft Ad News",
+        "source": "Seroundtable.com",
+        "url": "https://www.seroundtable.com/video-10-10-2025-40243.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:01:00Z"
+      },
+      {
+        "title": "Have DIY PCs peaked? Why Intel\u2019s Panther Lake reveal gave me existential dread",
+        "source": "PCWorld",
+        "url": "https://www.pcworld.com/article/2937155/have-diy-pcs-peaked-why-intels-panther-lake-reveal-gave-me-existential-dread.html",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T12:00:00Z"
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA",
+    "sentiment_score": 0.143,
+    "article_count": 12,
+    "positive_articles": 2,
+    "neutral_articles": 10,
+    "negative_articles": 0,
+    "articles": [
+      {
+        "title": "Jim Cramer Defends NVIDIA (NVDA) After AMD\u2019s OpenAI Deal",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-defends-nvidia-nvda-013536690.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:35:36Z"
+      },
+      {
+        "title": "Dow Jones Futures Rise After Bullish Stock Market Pause; Palantir, Netflix, Oracle Right At Buy Points",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/33da49bec71f246d",
+        "sentiment": 0.7142857142857143,
+        "published_at": "2025-10-10T04:24:25Z"
+      },
+      {
+        "title": "Samsung Courts Qualcomm With Snapdragon 8 Elite Gen 5 Built on 2nm Process",
+        "source": "Android Headlines",
+        "url": "https://www.androidheadlines.com/2025/10/samsung-courts-qualcomm-with-snapdragon-8-elite-gen-5-built-on-2nm-process.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:26:32Z"
+      },
+      {
+        "title": "Nvidia Has A Problem In China. Meet The Chipmakers Vying To Replace The AI Titan In A Key Market",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/2f11369c307fed76",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:10:15Z"
+      },
+      {
+        "title": "How the world\u2019s 240,000 crypto millionaires are spending their fortunes",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2025/10/10/how-crypto-millionaires-spend-their-fortunes.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:00:01Z"
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple",
+    "sentiment_score": -0.1,
+    "article_count": 10,
+    "positive_articles": 0,
+    "neutral_articles": 9,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "'The Last Frontier' TV series: A plane crash, a jailbreak and CIA secrets unfold in freezing Alaska",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/f05575c525d7d0fa",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T12:10:15Z"
+      },
+      {
+        "title": "Can Wells Fargo keep our money after a scammer stole it through Zelle?",
+        "source": "Elliott.org",
+        "url": "https://www.elliott.org/problem-solved/can-wells-fargo-keep-our-money-after-a-scammer-stole-it-through-zelle/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:30:00Z"
+      },
+      {
+        "title": "Samsung Courts Qualcomm With Snapdragon 8 Elite Gen 5 Built on 2nm Process",
+        "source": "Android Headlines",
+        "url": "https://www.androidheadlines.com/2025/10/samsung-courts-qualcomm-with-snapdragon-8-elite-gen-5-built-on-2nm-process.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:26:32Z"
+      },
+      {
+        "title": "Apple\u2019s AirPods Pro 3 Grabs Spot on the TIME\u2019s Best Inventions of 2025 List",
+        "source": "Mactrast.com",
+        "url": "https://www.mactrast.com/2025/10/apples-airpods-pro-3-makes-the-times-best-inventions-of-2025-list/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:24:40Z"
+      },
+      {
+        "title": "Video: Prime Video Unveils Exclusive Clip, New Single \"Gravity,\" and New Details About \"Hazbin Hotel: Live on Broadway\" Event at New York Comic Con for Season Two of \"Hazbin Hotel\"",
+        "source": "Thefutoncritic.com",
+        "url": "http://www.thefutoncritic.com/video/2025/10/10/video-prime-video-unveils-exclusive-clip-new-single-gravity-and-new-details-about-hazbin-hotel-live-on-broadway-event-at-new-york-comic-con-for-season-two-of-hazbin-hotel-964313/20251010amazon01/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:15:00Z"
+      }
+    ]
+  }
+]

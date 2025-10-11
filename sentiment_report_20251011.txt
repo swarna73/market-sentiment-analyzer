@@ -1,0 +1,103 @@
+============================================================
+📊 MARKET SENTIMENT BRIEF - October 11, 2025
+============================================================
+
+📈 SENTIMENT OVERVIEW
+------------------------------------------------------------
+🟢 TSLA (Tesla)
+   Sentiment: +0.500 (Bullish)
+   Articles: 10 (5+ / 5= / 0-)
+
+🔵 NVDA (NVIDIA)
+   Sentiment: +0.226 (Slightly Bullish)
+   Articles: 12 (5+ / 5= / 2-)
+
+🔵 GOOGL (Google)
+   Sentiment: +0.182 (Slightly Bullish)
+   Articles: 11 (3+ / 7= / 1-)
+
+🔵 MSFT (Microsoft)
+   Sentiment: +0.083 (Slightly Bullish)
+   Articles: 12 (1+ / 11= / 0-)
+
+🟡 AAPL (Apple)
+   Sentiment: -0.250 (Neutral/Mixed)
+   Articles: 8 (0+ / 6= / 2-)
+
+
+📰 TOP HEADLINES BY TICKER
+============================================================
+
+TSLA - Tesla
+------------------------------------------------------------
+1. 📈 Tesla’s China Shipments Rise at Start of Busy Sales Season
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/1529e362a4f80b52...
+
+2. 📈 Tesla Cybercab Spotted At Gigafactory Texas And California After Affordable Model Y, Model 3 Trims Launch
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/8fc1e553acac675b...
+
+3. 📈 North America Leads Stellantis Shipment Growth With 35% Surge
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/ce41ef0d4fb6a90d...
+
+
+NVDA - NVIDIA
+------------------------------------------------------------
+1. 📈 Jim Cramer Defends NVIDIA (NVDA) After AMD’s OpenAI Deal
+   Source: Yahoo Entertainment | Sentiment: +1.000
+   https://finance.yahoo.com/news/jim-cramer-defends-nvidia-nvda-013536690.html...
+
+2. 📉 China probes Qualcomm for alleged antitrust violations in Autotalks deal
+   Source: BusinessLine | Sentiment: -1.000
+   https://www.thehindubusinessline.com/info-tech/china-probes-qualcomm-for-alleged...
+
+3. 📈 Solidigm AI Central Lab Features 192 SSDs Packing 23.6 PB Into 16U
+   Source: Techpowerup.com | Sentiment: +1.000
+   https://www.techpowerup.com/341765/solidigm-ai-central-lab-features-192-ssds-pac...
+
+
+GOOGL - Google
+------------------------------------------------------------
+1. 📈 Jim Cramer Explains Why Alphabet (GOOGL) Dominates In Its Industry
+   Source: Yahoo Entertainment | Sentiment: +1.000
+   https://finance.yahoo.com/news/jim-cramer-explains-why-alphabet-014127012.html...
+
+2. 📈 Analysis-Gold’s record run creates new rulebooks for investors
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/da9db777240993a6...
+
+3. 📉 European Commission reviews child safety on Snapchat, YouTube, app stores
+   Source: CNA | Sentiment: -1.000
+   https://www.channelnewsasia.com/business/european-commission-reviews-child-safet...
+
+
+MSFT - Microsoft
+------------------------------------------------------------
+1. 📈 Bitcoin Miners Rally in Pre-Market as Sector Nears $90B Market Cap
+   Source: CoinDesk | Sentiment: +1.000
+   https://www.coindesk.com/markets/2025/10/10/bitcoin-miners-rally-in-pre-market-a...
+
+2. ➡️ AI Stocks- After Data Center Construction Boom, Will Profits Flow
+   Source: Yahoo Entertainment | Sentiment: +0.000
+   https://finance.yahoo.com/news/ai-stocks-data-center-construction-050100480.html...
+
+3. ➡️ Rishi Sunak Lands Shocking New Job With Microsoft And AI Giant Anthropic
+   Source: International Business Times | Sentiment: +0.000
+   https://www.ibtimes.com/rishi-sunak-lands-shocking-new-job-microsoft-ai-giant-an...
+
+
+AAPL - Apple
+------------------------------------------------------------
+1. 📉 European Commission reviews child safety on Snapchat, YouTube, app stores
+   Source: CNA | Sentiment: -1.000
+   https://www.channelnewsasia.com/business/european-commission-reviews-child-safet...
+
+2. 📉 Lenovo’s Yoga Tab Plus is a gorgeous Android tablet, but that’s not nearly enough
+   Source: Android Authority | Sentiment: -1.000
+   https://www.androidauthority.com/lenovo-yoga-tab-plus-review-3600509/...
+
+3. ➡️ ‘Tom Jones’ Star Solly McLeod Joins Angelina Jolie Pic ‘Anxious People’
+   Source: Deadline | Sentiment: +0.000
+   http://deadline.com/2025/10/solly-mcleod-joins-angelina-jolie-film-anxious-peopl...

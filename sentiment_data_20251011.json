@@ -1,0 +1,232 @@
+[
+  {
+    "ticker": "TSLA",
+    "company": "Tesla",
+    "sentiment_score": 0.5,
+    "article_count": 10,
+    "positive_articles": 5,
+    "neutral_articles": 5,
+    "negative_articles": 0,
+    "articles": [
+      {
+        "title": "Tesla\u2019s China Shipments Rise at Start of Busy Sales Season",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/1529e362a4f80b52",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:41:36Z"
+      },
+      {
+        "title": "Tesla Cybercab Spotted At Gigafactory Texas And California After Affordable Model Y, Model 3 Trims Launch",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/8fc1e553acac675b",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:30:31Z"
+      },
+      {
+        "title": "North America Leads Stellantis Shipment Growth With 35% Surge",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/ce41ef0d4fb6a90d",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:52:09Z"
+      },
+      {
+        "title": "77% jump in number of new EVs licensed in September - CSO",
+        "source": "RTE",
+        "url": "https://www.rte.ie/news/business/2025/1010/1537877-vehicles-licensed-for-first-time-september/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:30:15Z"
+      },
+      {
+        "title": "Elon Musk\u2019s Boring Co. Accused of Nearly 800 Environmental Violations on Las Vegas Project",
+        "source": "ProPublica",
+        "url": "https://www.propublica.org/article/elon-musk-boring-company-violations-fines-vegas-loop",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA",
+    "sentiment_score": 0.226,
+    "article_count": 12,
+    "positive_articles": 5,
+    "neutral_articles": 5,
+    "negative_articles": 2,
+    "articles": [
+      {
+        "title": "Jim Cramer Defends NVIDIA (NVDA) After AMD\u2019s OpenAI Deal",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-defends-nvidia-nvda-013536690.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:35:36Z"
+      },
+      {
+        "title": "China probes Qualcomm for alleged antitrust violations in Autotalks deal",
+        "source": "BusinessLine",
+        "url": "https://www.thehindubusinessline.com/info-tech/china-probes-qualcomm-for-alleged-antitrust-violations-in-autotalks-deal/article70147675.ece",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T10:58:08Z"
+      },
+      {
+        "title": "Solidigm AI Central Lab Features 192 SSDs Packing 23.6 PB Into 16U",
+        "source": "Techpowerup.com",
+        "url": "https://www.techpowerup.com/341765/solidigm-ai-central-lab-features-192-ssds-packing-23-6-pb-into-16u",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:57:23Z"
+      },
+      {
+        "title": "Is AMD Turning Into Nvidia\u2019s Kryptonite? Here\u2019s How High It Can Go",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/59a23df1b7ce1537",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:30:53Z"
+      },
+      {
+        "title": "Qualcomm shares fall after China opens antitrust probe into the U.S. chip giant",
+        "source": "CNBC",
+        "url": "https://www.cnbc.com/2025/10/10/qualcomm-shares-today-after-china-opens-antitrust-probe.html",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T10:21:41Z"
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Google",
+    "sentiment_score": 0.182,
+    "article_count": 11,
+    "positive_articles": 3,
+    "neutral_articles": 7,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "Jim Cramer Explains Why Alphabet (GOOGL) Dominates In Its Industry",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-explains-why-alphabet-014127012.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:41:27Z"
+      },
+      {
+        "title": "Analysis-Gold\u2019s record run creates new rulebooks for investors",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/da9db777240993a6",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:52:19Z"
+      },
+      {
+        "title": "European Commission reviews child safety on Snapchat, YouTube, app stores",
+        "source": "CNA",
+        "url": "https://www.channelnewsasia.com/business/european-commission-reviews-child-safety-snapchat-youtube-app-stores-5394601",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T10:52:06Z"
+      },
+      {
+        "title": "On A Night Of Firsts, Penguins Defeat Islanders, 4-3",
+        "source": "The Hockey News",
+        "url": "https://thehockeynews.com/nhl/pittsburgh-penguins/latest-news/on-a-night-of-firsts-penguins-defeat-islanders-4-3",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:45:03Z"
+      },
+      {
+        "title": "AI Stocks- After Data Center Construction Boom, Will Profits Flow",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/ai-stocks-data-center-construction-050100480.html",
+        "sentiment": 0.0,
+        "published_at": "2025-10-10T05:01:00Z"
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft",
+    "sentiment_score": 0.083,
+    "article_count": 12,
+    "positive_articles": 1,
+    "neutral_articles": 11,
+    "negative_articles": 0,
+    "articles": [
+      {
+        "title": "Bitcoin Miners Rally in Pre-Market as Sector Nears $90B Market Cap",
+        "source": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2025/10/10/bitcoin-miners-rally-in-pre-market-as-sector-nears-usd90b-market-cap",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T09:24:08Z"
+      },
+      {
+        "title": "AI Stocks- After Data Center Construction Boom, Will Profits Flow",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/ai-stocks-data-center-construction-050100480.html",
+        "sentiment": 0.0,
+        "published_at": "2025-10-10T05:01:00Z"
+      },
+      {
+        "title": "Rishi Sunak Lands Shocking New Job With Microsoft And AI Giant Anthropic",
+        "source": "International Business Times",
+        "url": "https://www.ibtimes.com/rishi-sunak-lands-shocking-new-job-microsoft-ai-giant-anthropic-3786471",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:53:13Z"
+      },
+      {
+        "title": "Rishi Sunak joins Anthropic, Microsoft as senior advisor",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/b877b15f65c4cd9c",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:52:30Z"
+      },
+      {
+        "title": "Microsoft Warns 300 Million Windows Users: Do Not Use This Software",
+        "source": "Forbes",
+        "url": "https://www.forbes.com/sites/zakdoffman/2025/10/10/microsoft-warns-300-million-windows-users-do-not-use-this--software/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:51:47Z"
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple",
+    "sentiment_score": -0.25,
+    "article_count": 8,
+    "positive_articles": 0,
+    "neutral_articles": 6,
+    "negative_articles": 2,
+    "articles": [
+      {
+        "title": "European Commission reviews child safety on Snapchat, YouTube, app stores",
+        "source": "CNA",
+        "url": "https://www.channelnewsasia.com/business/european-commission-reviews-child-safety-snapchat-youtube-app-stores-5394601",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T10:52:06Z"
+      },
+      {
+        "title": "Lenovo\u2019s Yoga Tab Plus is a gorgeous Android tablet, but that\u2019s not nearly enough",
+        "source": "Android Authority",
+        "url": "https://www.androidauthority.com/lenovo-yoga-tab-plus-review-3600509/",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T10:30:59Z"
+      },
+      {
+        "title": "\u2018Tom Jones\u2019 Star Solly McLeod Joins Angelina Jolie Pic \u2018Anxious People\u2019",
+        "source": "Deadline",
+        "url": "http://deadline.com/2025/10/solly-mcleod-joins-angelina-jolie-film-anxious-people-1236576046/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:58:23Z"
+      },
+      {
+        "title": "Links 10/10/2025",
+        "source": "Nakedcapitalism.com",
+        "url": "https://www.nakedcapitalism.com/2025/10/links-10-10-2025.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:55:23Z"
+      },
+      {
+        "title": "Apple's Leadership Shake-Up Hints At Big Plans For Health+ In 2026",
+        "source": "BGR",
+        "url": "https://www.bgr.com/1992427/apple-leadership-shakeup-healthplus-update/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T10:41:17Z"
+      }
+    ]
+  }
+]

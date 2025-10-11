@@ -1,0 +1,232 @@
+[
+  {
+    "ticker": "NVDA",
+    "company": "NVIDIA",
+    "sentiment_score": 0.317,
+    "article_count": 17,
+    "positive_articles": 7,
+    "neutral_articles": 8,
+    "negative_articles": 2,
+    "articles": [
+      {
+        "title": "A \u2018Top Pick,\u2019 Says Top Analyst about Nvidia Stock (NVDA), Wins a New Street-High Price Target",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/2eac0585c41526df",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T14:56:48Z"
+      },
+      {
+        "title": "5 \u2018Strong Buy\u2019 Stocks That Could Dominate the AI Economy in the Next 10 Years",
+        "source": "Barchart.com",
+        "url": "https://www.barchart.com/story/news/35362532/5-strong-buy-stocks-that-could-dominate-the-ai-economy-in-the-next-10-years",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T11:30:02Z"
+      },
+      {
+        "title": "Jim Cramer Defends NVIDIA (NVDA) After AMD\u2019s OpenAI Deal",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-defends-nvidia-nvda-013536690.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:35:36Z"
+      },
+      {
+        "title": "Watch These Nvidia Price Levels After AI Favorite's Recent Record-Setting Streak",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/66b2939ab70bd2e8",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T16:26:31Z"
+      },
+      {
+        "title": "Here are Friday's biggest analyst calls: Nvidia, Tesla, SharkNinja, Ferrari, Synchrony, Advanced Micro Devices, Caterpillar, Oracle & more",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/eb7a0ca457ac8f58",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T16:26:06Z"
+      }
+    ]
+  },
+  {
+    "ticker": "GOOGL",
+    "company": "Google",
+    "sentiment_score": 0.267,
+    "article_count": 15,
+    "positive_articles": 5,
+    "neutral_articles": 9,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "How Google Stock Soared >30% In 3 Months",
+        "source": "Forbes",
+        "url": "https://www.forbes.com/sites/greatspeculations/2025/10/10/how-google-stock-soared-30-in-3-months/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T12:34:41Z"
+      },
+      {
+        "title": "5 \u2018Strong Buy\u2019 Stocks That Could Dominate the AI Economy in the Next 10 Years",
+        "source": "Barchart.com",
+        "url": "https://www.barchart.com/story/news/35362532/5-strong-buy-stocks-that-could-dominate-the-ai-economy-in-the-next-10-years",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T11:30:02Z"
+      },
+      {
+        "title": "Jim Cramer Explains Why Alphabet (GOOGL) Dominates In Its Industry",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-explains-why-alphabet-014127012.html",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T01:41:27Z"
+      },
+      {
+        "title": "serper-toolkit 0.0.8",
+        "source": "Pypi.org",
+        "url": "https://pypi.org/project/serper-toolkit/0.0.8/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T16:31:00Z"
+      },
+      {
+        "title": "Hands on with the new Pixel Watch 4 features",
+        "source": "Blog.google",
+        "url": "https://blog.google/products/pixel/pixel-watch-4-hands-on-features/",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T16:30:00Z"
+      }
+    ]
+  },
+  {
+    "ticker": "TSLA",
+    "company": "Tesla",
+    "sentiment_score": 0.196,
+    "article_count": 17,
+    "positive_articles": 6,
+    "neutral_articles": 9,
+    "negative_articles": 2,
+    "articles": [
+      {
+        "title": "The Big Short investor on Tesla (TSLA): It\u2019s a cult",
+        "source": "Electrek",
+        "url": "http://electrek.co/2025/10/10/the-big-short-investor-on-tesla-tsla-its-a-cult/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T16:22:10Z"
+      },
+      {
+        "title": "Tesla Shares Recover All Their 2025 Losses",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/dd28ada307b3561b",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T13:28:38Z"
+      },
+      {
+        "title": "Tesla\u2019s China Shipments Rise at Start of Busy Sales Season",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/1529e362a4f80b52",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:41:36Z"
+      },
+      {
+        "title": "Tesla Cybercab Spotted At Gigafactory Texas And California After Affordable Model Y, Model 3 Trims Launch",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/8fc1e553acac675b",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T10:30:31Z"
+      },
+      {
+        "title": "Malaysia EV registrations grew 133.44% YoY in September 2025, 5.64% of TIV",
+        "source": "SoyaCincau.com",
+        "url": "https://soyacincau.com/2025/10/11/malaysia-jpj-ev-registration-september-2025/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T16:29:11Z"
+      }
+    ]
+  },
+  {
+    "ticker": "AAPL",
+    "company": "Apple",
+    "sentiment_score": 0.091,
+    "article_count": 11,
+    "positive_articles": 2,
+    "neutral_articles": 8,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "5 \u2018Strong Buy\u2019 Stocks That Could Dominate the AI Economy in the Next 10 Years",
+        "source": "Barchart.com",
+        "url": "https://www.barchart.com/story/news/35362532/5-strong-buy-stocks-that-could-dominate-the-ai-economy-in-the-next-10-years",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T11:30:02Z"
+      },
+      {
+        "title": "Former Cannes Festival President Pierre Lescure to Preside Over \u2018Emily in Paris\u2019 Studios in French Capital (EXCLUSIVE)",
+        "source": "Variety",
+        "url": "https://variety.com/2025/film/global/former-cannes-president-pierre-lescure-emily-paris-studios-1236542939/",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T16:26:55Z"
+      },
+      {
+        "title": "8BitDo Ultimate 3-mode Wireless Controller for Xbox slashed to $72.43 (20% off)",
+        "source": "Notebookcheck.net",
+        "url": "https://www.notebookcheck.net/8BitDo-Ultimate-3-mode-Wireless-Controller-for-Xbox-slashed-to-72-43-20-off.1135448.0.html",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T16:26:00Z"
+      },
+      {
+        "title": "Elgato\u3001Stream Deck\u30b7\u30ea\u30fc\u30ba\u3067Mac/Windows\u306e\u30a6\u30a3\u30f3\u30c9\u30a6\u7ba1\u7406\u304c\u53ef\u80fd\u306a\u30d7\u30e9\u30b0\u30a4\u30f3\u300cWindow Mover\u300d\u3092\u30ea\u30ea\u30fc\u30b9\u3002",
+        "source": "Applech2.com",
+        "url": "https://applech2.com/archives/20251010-elgato-stream-deck-window-mover.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T12:35:58Z"
+      },
+      {
+        "title": "What is Adaptive Power on iPhone in iOS 26?",
+        "source": "Idownloadblog.com",
+        "url": "https://www.idownloadblog.com/2025/10/10/adaptive-power-iphone/",
+        "sentiment": 0,
+        "published_at": "2025-10-10T16:30:35Z"
+      }
+    ]
+  },
+  {
+    "ticker": "MSFT",
+    "company": "Microsoft",
+    "sentiment_score": 0.067,
+    "article_count": 15,
+    "positive_articles": 2,
+    "neutral_articles": 12,
+    "negative_articles": 1,
+    "articles": [
+      {
+        "title": "5 \u2018Strong Buy\u2019 Stocks That Could Dominate the AI Economy in the Next 10 Years",
+        "source": "Barchart.com",
+        "url": "https://www.barchart.com/story/news/35362532/5-strong-buy-stocks-that-could-dominate-the-ai-economy-in-the-next-10-years",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T11:30:02Z"
+      },
+      {
+        "title": "Bitcoin Miners Rally in Pre-Market as Sector Nears $90B Market Cap",
+        "source": "CoinDesk",
+        "url": "https://www.coindesk.com/markets/2025/10/10/bitcoin-miners-rally-in-pre-market-as-sector-nears-usd90b-market-cap",
+        "sentiment": 1.0,
+        "published_at": "2025-10-10T09:24:08Z"
+      },
+      {
+        "title": "CEO Jamie Dimon \u2018Far More Worried\u2019 about U.S. Stock Market Fall",
+        "source": "Biztoc.com",
+        "url": "https://biztoc.com/x/58b7bb296270f544",
+        "sentiment": -1.0,
+        "published_at": "2025-10-10T16:26:06Z"
+      },
+      {
+        "title": "China launches probe into Qualcomm amid ongoing US trade fight",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/china-launches-probe-into-qualcomm-amid-ongoing-us-trade-fight-162815501.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T16:28:15Z"
+      },
+      {
+        "title": "Jim Cramer About Microsoft (MSFT) Bull Comments: \u2018He\u2019s Been Dead Right\u2019",
+        "source": "Yahoo Entertainment",
+        "url": "https://finance.yahoo.com/news/jim-cramer-microsoft-msft-bull-130231873.html",
+        "sentiment": 0,
+        "published_at": "2025-10-10T13:02:31Z"
+      }
+    ]
+  }
+]

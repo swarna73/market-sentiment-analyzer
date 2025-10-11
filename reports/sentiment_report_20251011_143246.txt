@@ -1,0 +1,103 @@
+============================================================
+📊 MARKET SENTIMENT BRIEF - October 11, 2025
+============================================================
+
+📈 SENTIMENT OVERVIEW
+------------------------------------------------------------
+🟢 TSLA (Tesla)
+   Sentiment: +0.462 (Bullish)
+   Articles: 13 (6+ / 7= / 0-)
+
+🔵 GOOGL (Google)
+   Sentiment: +0.250 (Slightly Bullish)
+   Articles: 12 (3+ / 9= / 0-)
+
+🔵 MSFT (Microsoft)
+   Sentiment: +0.231 (Slightly Bullish)
+   Articles: 13 (4+ / 8= / 1-)
+
+🔵 NVDA (NVIDIA)
+   Sentiment: +0.143 (Slightly Bullish)
+   Articles: 12 (2+ / 10= / 0-)
+
+🟡 AAPL (Apple)
+   Sentiment: -0.100 (Neutral/Mixed)
+   Articles: 10 (0+ / 9= / 1-)
+
+
+📰 TOP HEADLINES BY TICKER
+============================================================
+
+TSLA - Tesla
+------------------------------------------------------------
+1. 📈 Tesla’s China Shipments Rise at Start of Busy Sales Season
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/1529e362a4f80b52...
+
+2. 📈 Tesla Cybercab Spotted At Gigafactory Texas And California After Affordable Model Y, Model 3 Trims Launch
+   Source: Biztoc.com | Sentiment: +1.000
+   https://biztoc.com/x/8fc1e553acac675b...
+
+3. 📈 BMW India achieves best-ever sales with GST 2.0 boost: iX1 top EV model
+   Source: The Times of India | Sentiment: +1.000
+   https://timesofindia.indiatimes.com/auto/news/bmw-india-achieves-best-ever-sales...
+
+
+GOOGL - Google
+------------------------------------------------------------
+1. 📈 Jim Cramer Explains Why Alphabet (GOOGL) Dominates In Its Industry
+   Source: Yahoo Entertainment | Sentiment: +1.000
+   https://finance.yahoo.com/news/jim-cramer-explains-why-alphabet-014127012.html...
+
+2. 📈 ‘Of course we’re looking into other markets’: Fairphone CEO on expansion plans and the unique challenges of the US market
+   Source: TechRadar | Sentiment: +1.000
+   https://www.techradar.com/phones/of-course-were-looking-into-other-markets-fairp...
+
+3. 📈 Xbox Next Is Rumored to Target 2027 Launch; Partial Specs Leaked
+   Source: Wccftech | Sentiment: +1.000
+   https://wccftech.com/xbox-next-2027-launch-rumor/...
+
+
+MSFT - Microsoft
+------------------------------------------------------------
+1. 📈 Bitcoin Miners Rally in Pre-Market as Sector Nears $90B Market Cap
+   Source: CoinDesk | Sentiment: +1.000
+   https://www.coindesk.com/markets/2025/10/10/bitcoin-miners-rally-in-pre-market-a...
+
+2. 📈 Xbox Next Is Rumored to Target 2027 Launch; Partial Specs Leaked
+   Source: Wccftech | Sentiment: +1.000
+   https://wccftech.com/xbox-next-2027-launch-rumor/...
+
+3. 📈 Beyond the refresh: Your cyber strategy must include AI PCs
+   Source: ComputerWeekly.com | Sentiment: +1.000
+   https://www.computerweekly.com/opinion/Beyond-the-refresh-Your-cyber-strategy-mu...
+
+
+NVDA - NVIDIA
+------------------------------------------------------------
+1. 📈 Jim Cramer Defends NVIDIA (NVDA) After AMD’s OpenAI Deal
+   Source: Yahoo Entertainment | Sentiment: +1.000
+   https://finance.yahoo.com/news/jim-cramer-defends-nvidia-nvda-013536690.html...
+
+2. 📈 Dow Jones Futures Rise After Bullish Stock Market Pause; Palantir, Netflix, Oracle Right At Buy Points
+   Source: Biztoc.com | Sentiment: +0.714
+   https://biztoc.com/x/33da49bec71f246d...
+
+3. ➡️ Samsung Courts Qualcomm With Snapdragon 8 Elite Gen 5 Built on 2nm Process
+   Source: Android Headlines | Sentiment: +0.000
+   https://www.androidheadlines.com/2025/10/samsung-courts-qualcomm-with-snapdragon...
+
+
+AAPL - Apple
+------------------------------------------------------------
+1. 📉 'The Last Frontier' TV series: A plane crash, a jailbreak and CIA secrets unfold in freezing Alaska
+   Source: Biztoc.com | Sentiment: -1.000
+   https://biztoc.com/x/f05575c525d7d0fa...
+
+2. ➡️ Can Wells Fargo keep our money after a scammer stole it through Zelle?
+   Source: Elliott.org | Sentiment: +0.000
+   https://www.elliott.org/problem-solved/can-wells-fargo-keep-our-money-after-a-sc...
+
+3. ➡️ Samsung Courts Qualcomm With Snapdragon 8 Elite Gen 5 Built on 2nm Process
+   Source: Android Headlines | Sentiment: +0.000
+   https://www.androidheadlines.com/2025/10/samsung-courts-qualcomm-with-snapdragon...
