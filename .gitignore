@@ -36,3 +36,4 @@ test_*.py
 dist/
 build/
 *.egg-info/
+config.py

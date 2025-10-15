@@ -17,6 +17,7 @@ def lambda_handler(event, context):
     try:
         # Get configuration from environment variables
         newsapi_key = os.environ.get('NEWSAPI_KEY')
+        alphavantage_key = os.environ.get('ALPHAVANTAGE_KEY')
         
         # Tickers configuration
         tickers = {
@@ -26,6 +27,15 @@ def lambda_handler(event, context):
             'TSLA': 'Tesla',
             'NVDA': 'NVIDIA'
         }
+
+
+        tickers_env = os.environ.get('TICKERS', 'AAPL:Apple,MSFT:Microsoft,GOOGL:Google,TSLA:Tesla,NVDA:NVIDIA')
+        tickers = {}
+        for ticker_pair in tickers_env.split(','):
+            if ':' in ticker_pair:
+                ticker, company = ticker_pair.strip().split(':', 1)
+                tickers[ticker.strip()] = company.strip() 
+
         
         # Email configuration
         email_config = {
@@ -47,7 +57,7 @@ def lambda_handler(event, context):
         
         # Run analysis
         print("Initializing analyzer...")
-        analyzer = MarketSentimentAnalyzer(newsapi_key)
+        analyzer = MarketSentimentAnalyzer(newsapi_key, alphavantage_key)
         
         print("Generating report...")
         report, data = analyzer.generate_report(tickers)
@@ -82,6 +92,6 @@ def lambda_handler(event, context):
             'body': json.dumps({
                 'message': 'Error during sentiment analysis',
                 'error': str(e),
-:q                'timestamp': datetime.now().isoformat()
+                'timestamp': datetime.now().isoformat()
             })
         }
