@@ -3,9 +3,35 @@ AWS Lambda handler for Market Sentiment Analyzer
 """
 import json
 import os
+import boto3
 from datetime import datetime
 from sentiment_analyzer import MarketSentimentAnalyzer
 from email_sender import send_email_report
+
+def save_to_s3(data):
+    """Save analysis results to S3"""
+    s3_client = boto3.client('s3', region_name='eu-north-1')
+    bucket_name = 'putcall-dashboard-data'
+    
+    # Prepare data for frontend
+    dashboard_data = {
+        'timestamp': datetime.now().isoformat(),
+        'date': datetime.now().strftime('%Y-%m-%d'),
+        'stocks': data  # Your analysis results
+    }
+    
+    try:
+        s3_client.put_object(
+            Bucket=bucket_name,
+            Key='dashboard-data.json',
+            Body=json.dumps(dashboard_data, indent=2),
+            ContentType='application/json'
+        )
+        print("✅ Data saved to S3!")
+        return True
+    except Exception as e:
+        print(f"❌ Error saving to S3: {e}")
+        return False
 
 def lambda_handler(event, context):
     """
@@ -20,22 +46,12 @@ def lambda_handler(event, context):
         alphavantage_key = os.environ.get('ALPHAVANTAGE_KEY')
         
         # Tickers configuration
-        tickers = {
-            'AAPL': 'Apple',
-            'MSFT': 'Microsoft',
-            'GOOGL': 'Google',
-            'TSLA': 'Tesla',
-            'NVDA': 'NVIDIA'
-        }
-
-
         tickers_env = os.environ.get('TICKERS', 'AAPL:Apple,MSFT:Microsoft,GOOGL:Google,TSLA:Tesla,NVDA:NVIDIA')
         tickers = {}
         for ticker_pair in tickers_env.split(','):
             if ':' in ticker_pair:
                 ticker, company = ticker_pair.strip().split(':', 1)
                 tickers[ticker.strip()] = company.strip() 
-
         
         # Email configuration
         email_config = {
@@ -62,11 +78,15 @@ def lambda_handler(event, context):
         print("Generating report...")
         report, data = analyzer.generate_report(tickers)
         
+        # Save to S3 for dashboard
+        print("Saving to S3...")
+        s3_success = save_to_s3(data)
+        
         # Send email if enabled
         if email_config['enabled']:
             print("Sending email...")
-            success = send_email_report(report, email_config)
-            if success:
+            email_success = send_email_report(report, email_config)
+            if email_success:
                 print("Email sent successfully!")
             else:
                 print("Email sending failed")
@@ -78,7 +98,8 @@ def lambda_handler(event, context):
                 'message': 'Sentiment analysis completed successfully',
                 'timestamp': datetime.now().isoformat(),
                 'email_sent': email_config['enabled'],
-                'stocks_analyzed': len(tickers)
+                'stocks_analyzed': len(tickers),
+                's3_saved': s3_success
             })
         }
         

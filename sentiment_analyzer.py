@@ -13,8 +13,8 @@ class MarketSentimentAnalyzer:
         """
         self.api_key = api_key
         self.alphavantage_key = alphavantage_key
-        self.news_api_url = "https://newsapi.org/v2/everything"    
-
+        self.news_api_url = "https://newsapi.org/v2/everything"
+        
     def fetch_news(self, ticker, company_name, days_back=1):
         """Fetch news articles for a specific ticker"""
         end_date = datetime.now()
@@ -146,15 +146,15 @@ class MarketSentimentAnalyzer:
             'negative_articles': negative,
             'articles': sorted(analyzed_articles, key=lambda x: abs(x['sentiment']), reverse=True)[:5]
         }
+    
     def analyze_ticker_with_fundamentals(self, ticker, company_name):
         """Enhanced analysis including both sentiment and fundamentals"""
-        from financial_metrics import FinancialMetricsAnalyzer
         
         # Get sentiment from news
         sentiment_data = self.analyze_ticker(ticker, company_name)
         
-        # Get financial metrics
-        metrics_analyzer = FinancialMetricsAnalyzer(api_key=self.alphavantage_key)
+        # Get financial metrics with alphavantage_key
+        metrics_analyzer = FinancialMetricsAnalyzer(self.alphavantage_key)
         fundamentals = metrics_analyzer.get_stock_fundamentals(ticker)
         
         if fundamentals['success']:
@@ -180,7 +180,8 @@ class MarketSentimentAnalyzer:
                 'valuation_analysis': valuation,
                 'combined_signal': self._generate_combined_signal(
                     sentiment_data['sentiment_score'], 
-                    valuation
+                    valuation,
+                    metrics.get('price_change_pct', 0)
                 )
             }
             
@@ -188,120 +189,117 @@ class MarketSentimentAnalyzer:
         
         return sentiment_data
     
-    def _generate_combined_signal(self, sentiment_score, valuation):
-        """Generate investment signal combining sentiment and valuation"""
+    def _generate_combined_signal(self, sentiment_score, valuation, price_change_pct=0):
+        """
+        Generate investment signal combining sentiment, valuation, and price momentum
+        
+        IMPROVED LOGIC:
+        - Lower sentiment thresholds for more responsive signals
+        - Include price momentum in the decision
+        - More nuanced signal generation
+        """
         
         signals = []
         
-        # Sentiment interpretation
-        if sentiment_score > 0.3:
+        # === 1. SENTIMENT INTERPRETATION ===
+        # Lowered thresholds from ±0.3 to ±0.15 for better responsiveness
+        if sentiment_score > 0.15:
             sentiment_label = "Bullish"
-        elif sentiment_score < -0.3:
+        elif sentiment_score < -0.15:
             sentiment_label = "Bearish"
         else:
             sentiment_label = "Neutral"
         
-        # Valuation interpretation
+        # === 2. PRICE MOMENTUM INTERPRETATION ===
+        # Consider recent price action as a strong signal
+        if price_change_pct is not None:
+            if price_change_pct > 2.0:
+                momentum_label = "Strong Upward"
+            elif price_change_pct > 0.5:
+                momentum_label = "Upward"
+            elif price_change_pct < -2.0:
+                momentum_label = "Strong Downward"
+            elif price_change_pct < -0.5:
+                momentum_label = "Downward"
+            else:
+                momentum_label = "Flat"
+        else:
+            momentum_label = "Unknown"
+        
+        # === 3. VALUATION INTERPRETATION ===
         valuation_label = valuation['overall']
         
-        # Combined signal
-        if sentiment_label == "Bullish" and valuation_label == "Attractive":
-            signal = "🟢 STRONG BUY SIGNAL"
-            signals.append("Positive sentiment + Attractive valuation")
-        elif sentiment_label == "Bullish" and valuation_label == "Concerns":
-            signal = "🟡 CAUTION"
-            signals.append("Positive sentiment but valuation concerns")
-        elif sentiment_label == "Bearish" and valuation_label == "Attractive":
-            signal = "🟡 CONTRARIAN OPPORTUNITY"
-            signals.append("Negative sentiment but attractive valuation - possible value play")
-        elif sentiment_label == "Bearish" and valuation_label == "Concerns":
-            signal = "🔴 AVOID"
-            signals.append("Negative sentiment + Valuation concerns")
+        # === 4. COMBINED SIGNAL GENERATION ===
+        # Calculate a composite score
+        score = 0
+        
+        # Sentiment contribution (weight: 30%)
+        if sentiment_label == "Bullish":
+            score += 30
+        elif sentiment_label == "Bearish":
+            score -= 30
+        
+        # Momentum contribution (weight: 40%) - Price action is important!
+        if momentum_label == "Strong Upward":
+            score += 40
+        elif momentum_label == "Upward":
+            score += 20
+        elif momentum_label == "Strong Downward":
+            score -= 40
+        elif momentum_label == "Downward":
+            score -= 20
+        
+        # Valuation contribution (weight: 30%)
+        if valuation_label == "Attractive":
+            score += 30
+        elif valuation_label == "Concerns":
+            score -= 30
+        
+        # Generate signal based on composite score
+        if score >= 60:
+            signal = "🟢 STRONG BUY"
+            signals.append(f"High conviction: {sentiment_label} sentiment + {momentum_label} momentum + {valuation_label} valuation")
+        elif score >= 30:
+            signal = "🟢 BUY"
+            signals.append(f"Positive signals: {sentiment_label} sentiment, {momentum_label} momentum, {valuation_label} valuation")
+        elif score >= 10:
+            signal = "🟡 WEAK BUY"
+            signals.append(f"Modestly positive: Check {valuation_label} valuation and {momentum_label} momentum")
+        elif score <= -60:
+            signal = "🔴 STRONG SELL"
+            signals.append(f"High risk: {sentiment_label} sentiment + {momentum_label} momentum + {valuation_label} valuation")
+        elif score <= -30:
+            signal = "🔴 SELL"
+            signals.append(f"Negative signals: {sentiment_label} sentiment, {momentum_label} momentum, {valuation_label} valuation")
+        elif score <= -10:
+            signal = "🟡 WEAK SELL"
+            signals.append(f"Modestly negative: Monitor {valuation_label} valuation and {momentum_label} momentum")
         else:
             signal = "⚪ NEUTRAL"
-            signals.append("Mixed signals - further research needed")
+            signals.append(f"Mixed signals: {sentiment_label} sentiment, {momentum_label} momentum, {valuation_label} valuation")
+        
+        # Add specific reasoning based on combinations
+        if sentiment_label == "Bullish" and momentum_label in ["Strong Upward", "Upward"] and valuation_label == "Attractive":
+            signals.append("⭐ All indicators aligned - Strong opportunity")
+        elif sentiment_label == "Bearish" and momentum_label in ["Strong Downward", "Downward"] and valuation_label == "Concerns":
+            signals.append("⚠️ All indicators negative - High risk")
+        elif sentiment_label == "Bullish" and valuation_label == "Concerns":
+            signals.append("⚠️ Positive sentiment but overvalued - Exercise caution")
+        elif sentiment_label == "Bearish" and valuation_label == "Attractive":
+            signals.append("💎 Potential value opportunity despite negative sentiment")
+        elif momentum_label in ["Strong Upward", "Upward"] and sentiment_label == "Neutral":
+            signals.append("📈 Strong price momentum - Watch for sentiment shift")
         
         return {
             'signal': signal,
             'sentiment': sentiment_label,
+            'momentum': momentum_label,
+            'momentum_pct': round(price_change_pct, 2) if price_change_pct else None,
             'valuation': valuation_label,
+            'composite_score': score,
             'reasoning': signals
         }
-    def _format_enhanced_report(self, results):
-        """Format report with financial metrics included"""
-        report = []
-        report.append("=" * 80)
-        report.append(f"📊 ENHANCED MARKET ANALYSIS - {datetime.now().strftime('%B %d, %Y')}")
-        report.append("=" * 80)
-        report.append("")
-        
-        # Sort by combined signal strength
-        results.sort(key=lambda x: x.get('sentiment_score', 0), reverse=True)
-        
-        for result in results:
-            report.append("")
-            report.append("=" * 80)
-            report.append(f"{result['ticker']} - {result['company']}")
-            report.append("=" * 80)
-            
-            # Combined Signal
-            combined = result.get('combined_signal', {})
-            report.append(f"\n{combined.get('signal', 'N/A')}")
-            report.append(f"Sentiment: {combined.get('sentiment', 'N/A')} | Valuation: {combined.get('valuation', 'N/A')}")
-            
-            # News Sentiment
-            report.append(f"\n📰 NEWS SENTIMENT")
-            report.append(f"Score: {result['sentiment_score']:+.3f}")
-            report.append(f"Articles: {result['article_count']} ({result['positive_articles']}+ / {result['neutral_articles']}= / {result['negative_articles']}-)")
-            
-            # Financial Metrics
-            metrics = result.get('financial_metrics', {})
-            if metrics:
-                report.append(f"\n💰 FINANCIAL METRICS")
-                
-                price = metrics.get('current_price')
-                price_change = metrics.get('price_change_pct')
-                if price and price_change:
-                    arrow = "📈" if price_change > 0 else "📉"
-                    report.append(f"Price: ${price:.2f} {arrow} {price_change:+.2f}%")
-                
-                report.append(f"Market Cap: {metrics.get('market_cap', 'N/A')}")
-                report.append(f"P/E Ratio: {metrics.get('pe_ratio', 'N/A')} | Forward P/E: {metrics.get('forward_pe', 'N/A')}")
-                report.append(f"EPS: {metrics.get('eps', 'N/A')} | Dividend Yield: {metrics.get('dividend_yield', 'N/A')}")
-                report.append(f"Profit Margin: {metrics.get('profit_margin', 'N/A')} | Revenue Growth: {metrics.get('revenue_growth', 'N/A')}")
-                report.append(f"Debt/Equity: {metrics.get('debt_to_equity', 'N/A')} | Beta: {metrics.get('beta', 'N/A')}")
-            
-            # Valuation Analysis
-            valuation = result.get('valuation_analysis', {})
-            if valuation:
-                report.append(f"\n📊 VALUATION ANALYSIS")
-                
-                if valuation.get('strengths'):
-                    report.append("Strengths:")
-                    for strength in valuation['strengths']:
-                        report.append(f"  ✓ {strength}")
-                
-                if valuation.get('concerns'):
-                    report.append("Concerns:")
-                    for concern in valuation['concerns']:
-                        report.append(f"  ⚠ {concern}")
-            
-            # Top Headlines
-            if result.get('articles'):
-                report.append(f"\n📰 TOP HEADLINES")
-                for i, article in enumerate(result['articles'][:3], 1):
-                    sentiment_icon = "📈" if article['sentiment'] > 0 else "📉" if article['sentiment'] < 0 else "➡️"
-                    report.append(f"{i}. {sentiment_icon} {article['title']}")
-                    report.append(f"   {article['source']} | Sentiment: {article['sentiment']:+.3f}")
-        
-        report.append("")
-        report.append("=" * 80)
-        report.append("💡 DISCLAIMER: This is automated analysis for informational purposes only.")
-        report.append("   Not financial advice. Always do your own research before investing.")
-        report.append("=" * 80)
-        
-        return "\n".join(report)
-
+    
     def generate_report(self, tickers):
         """Generate enhanced report with fundamentals"""
         results = []
@@ -310,97 +308,8 @@ class MarketSentimentAnalyzer:
     
         for ticker, company_name in tickers.items():
             print(f"Fetching data for {ticker}...")
-            # Use the enhanced method instead
+            # Use the enhanced method
             result = self.analyze_ticker_with_fundamentals(ticker, company_name)
             results.append(result)
     
-        # Use enhanced report formatting
-        report = self._format_enhanced_report(results)
-        return report, results
-    
-    def _format_report(self, results):
-        """Format the analysis into a readable report"""
-        report = []
-        report.append("=" * 60)
-        report.append(f"📊 MARKET SENTIMENT BRIEF - {datetime.now().strftime('%B %d, %Y')}")
-        report.append("=" * 60)
-        report.append("")
-        
-        # Summary
-        report.append("📈 SENTIMENT OVERVIEW")
-        report.append("-" * 60)
-        for result in results:
-            sentiment = result['sentiment_score']
-            ticker = result['ticker']
-            company = result['company']
-            count = result['article_count']
-            
-            # Emoji based on sentiment
-            if sentiment > 0.3:
-                emoji = "🟢"
-                label = "Bullish"
-            elif sentiment > 0:
-                emoji = "🔵"
-                label = "Slightly Bullish"
-            elif sentiment > -0.3:
-                emoji = "🟡"
-                label = "Neutral/Mixed"
-            else:
-                emoji = "🔴"
-                label = "Bearish"
-            
-            report.append(f"{emoji} {ticker} ({company})")
-            report.append(f"   Sentiment: {sentiment:+.3f} ({label})")
-            report.append(f"   Articles: {count} ({result['positive_articles']}+ / {result['neutral_articles']}= / {result['negative_articles']}-)")
-            report.append("")
-        
-        # Detailed insights
-        report.append("")
-        report.append("📰 TOP HEADLINES BY TICKER")
-        report.append("=" * 60)
-        
-        for result in results:
-            report.append(f"\n{result['ticker']} - {result['company']}")
-            report.append("-" * 60)
-            
-            if result['articles']:
-                for i, article in enumerate(result['articles'][:3], 1):
-                    sentiment_icon = "📈" if article['sentiment'] > 0 else "📉" if article['sentiment'] < 0 else "➡️"
-                    report.append(f"{i}. {sentiment_icon} {article['title']}")
-                    report.append(f"   Source: {article['source']} | Sentiment: {article['sentiment']:+.3f}")
-                    report.append(f"   {article['url'][:80]}...")
-                    report.append("")
-            else:
-                report.append("   No recent news found")
-                report.append("")
-        
-        return "\n".join(report)
-
-
-# Example usage
-
-if __name__ == "__main__":
-    from config import NEWSAPI_KEY, TICKERS, ALPHAVANTAGE_KEY
-    
-    # Create analyzer
-    analyzer = MarketSentimentAnalyzer(NEWSAPI_KEY, ALPHAVANTAGE_KEY)
-    
-    # Generate report
-    print("Starting analysis...")
-    report, data = analyzer.generate_report(TICKERS)
-    
-    # Print report
-    print(report)
-    
-    # Optional: Save to file
-    with open(f'sentiment_report_{datetime.now().strftime("%Y%m%d")}.txt', 'w') as f:
-        f.write(report)
-    
-    # Optional: Save raw data as JSON
-    with open(f'sentiment_data_{datetime.now().strftime("%Y%m%d")}.json', 'w') as f:
-        json.dump(data, f, indent=2)
-    
-    print("\n✅ Report saved to file!")
-
-
-
+        return "", results  # Return empty string for report, just results

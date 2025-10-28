@@ -14,6 +14,39 @@ class FinancialMetricsAnalyzer:
         self.api_key = api_key
         self.base_url = "https://www.alphavantage.co/query"
     
+    def get_current_price(self, ticker):
+        """
+        Fetch current stock price and price change
+        Uses GLOBAL_QUOTE endpoint
+        """
+        try:
+            params = {
+                'function': 'GLOBAL_QUOTE',
+                'symbol': ticker,
+                'apikey': self.api_key
+            }
+            
+            response = requests.get(self.base_url, params=params, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+            
+            # Check if we got valid data
+            if 'Global Quote' not in data or not data['Global Quote']:
+                print(f"No price data for {ticker}")
+                return None, None
+            
+            quote = data['Global Quote']
+            
+            # Extract price and change
+            current_price = self._safe_float(quote.get('05. price'))
+            change_percent = self._safe_float(quote.get('10. change percent', '').replace('%', ''))
+            
+            return current_price, change_percent
+            
+        except Exception as e:
+            print(f"Error fetching price for {ticker}: {e}")
+            return None, None
+    
     def get_stock_fundamentals(self, ticker):
         """
         Fetch fundamental financial metrics for a stock
@@ -27,7 +60,10 @@ class FinancialMetricsAnalyzer:
             }
         
         try:
-            # Get company overview (includes most financial metrics)
+            # First, get the current price and change
+            current_price, price_change_pct = self.get_current_price(ticker)
+            
+            # Then get company overview (includes most financial metrics)
             params = {
                 'function': 'OVERVIEW',
                 'symbol': ticker,
@@ -49,8 +85,9 @@ class FinancialMetricsAnalyzer:
             
             # Parse the metrics
             metrics = {
-                # Price Information
-                'current_price': self._safe_float(data.get('Price')),
+                # Price Information (from GLOBAL_QUOTE)
+                'current_price': current_price,
+                'price_change_pct': price_change_pct,
                 '52_week_high': self._safe_float(data.get('52WeekHigh')),
                 '52_week_low': self._safe_float(data.get('52WeekLow')),
                 
