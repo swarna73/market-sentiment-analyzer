@@ -140,23 +140,29 @@ def lambda_handler(event, context):
         },
         'body': json.dumps(movers_data)
     }
-    movers_analyzer = FastSP500Movers()
-    movers_data = movers_analyzer.get_yahoo_movers(top_n=10)
 
-    if not movers_data.get('gainers'):
-       movers_data = movers_analyzer.get_finviz_movers(top_n=10)
+# NEW: Add movers analysis
+movers_analyzer = FastSP500Movers()
+movers_data = movers_analyzer.get_yahoo_movers(top_n=10)
 
-    dashboard_data = {
-        'main_stocks': results,  # Your existing stocks
-        'top_gainers': movers_data['gainers'],
-        'top_losers': movers_data['losers'],
-        'timestamp': movers_data['timestamp']
-   }  
-    return {
-        'statusCode': 200,
-        'headers': {
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*'
-         },
-         'body': json.dumps(dashboard_data)
-    } 
+# If Yahoo fails, try Finviz as backup
+if not movers_data.get('gainers'):
+    movers_data = movers_analyzer.get_finviz_movers(top_n=10)
+
+# Add movers to your response
+dashboard_data = {
+    'main_stocks': results,  # Your existing stocks
+    'top_gainers': movers_data['gainers'],
+    'top_losers': movers_data['losers'],
+    'timestamp': movers_data['timestamp']
+}
+
+# Return the combined data
+return {
+    'statusCode': 200,
+    'headers': {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+    },
+    'body': json.dumps(dashboard_data)
+}

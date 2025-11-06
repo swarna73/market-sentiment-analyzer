@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Movers - Add to Your Dashboard</title>
+    <style>
+        /* Add these styles to your existing CSS */
+        
+        /* Movers Container */
+        .movers-wrapper {
+            margin-top: 3rem;
+            padding: 2rem 0;
+        }
+        
+        .movers-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .movers-header h2 {
+            color: #4a9eff;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .movers-header p {
+            color: #8b92b0;
+            font-size: 0.9rem;
+        }
+        
+        .movers-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .movers-section {
+            background: linear-gradient(135deg, #1a1d2e 0%, #16192b 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #2a2d3e;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .movers-section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2a2d3e;
+        }
+        
+        .movers-section-header h3 {
+            color: #e0e6ed;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        
+        .movers-section-header .icon {
+            font-size: 1.8rem;
+        }
+        
+        .movers-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .movers-table thead {
+            background: rgba(74, 158, 255, 0.1);
+        }
+        
+        .movers-table th {
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            color: #8b92b0;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .movers-table tbody tr {
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid rgba(42, 45, 62, 0.5);
+        }
+        
+        .movers-table tbody tr:hover {
+            background: rgba(74, 158, 255, 0.05);
+        }
+        
+        .movers-table td {
+            padding: 1rem 0.5rem;
+            color: #e0e6ed;
+            font-size: 0.95rem;
+        }
+        
+        .movers-table .rank {
+            font-weight: bold;
+            color: #8b92b0;
+            width: 40px;
+        }
+        
+        .movers-table .ticker {
+            font-weight: bold;
+            color: #4a9eff;
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+        }
+        
+        .movers-table .ticker:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .movers-table .price {
+            font-weight: 500;
+        }
+        
+        .movers-table .change-positive {
+            color: #4caf50;
+            font-weight: bold;
+        }
+        
+        .movers-table .change-negative {
+            color: #f44336;
+            font-weight: bold;
+        }
+        
+        .movers-table .signal {
+            font-weight: 600;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .signal-strong-buy {
+            background: rgba(76, 175, 80, 0.25);
+            color: #4caf50;
+            border: 1px solid rgba(76, 175, 80, 0.4);
+        }
+        
+        .signal-buy {
+            background: rgba(76, 175, 80, 0.15);
+            color: #66bb6a;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        
+        .signal-weak-buy {
+            background: rgba(76, 175, 80, 0.1);
+            color: #81c784;
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+        
+        .signal-strong-sell {
+            background: rgba(244, 67, 54, 0.25);
+            color: #f44336;
+            border: 1px solid rgba(244, 67, 54, 0.4);
+        }
+        
+        .signal-sell {
+            background: rgba(244, 67, 54, 0.15);
+            color: #ef5350;
+            border: 1px solid rgba(244, 67, 54, 0.3);
+        }
+        
+        .signal-weak-sell {
+            background: rgba(244, 67, 54, 0.1);
+            color: #e57373;
+            border: 1px solid rgba(244, 67, 54, 0.2);
+        }
+        
+        .signal-overbought,
+        .signal-oversold {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.4);
+        }
+        
+        .signal-neutral {
+            background: rgba(158, 158, 158, 0.15);
+            color: #9e9e9e;
+            border: 1px solid rgba(158, 158, 158, 0.3);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: #8b92b0;
+        }
+        
+        .loading-spinner {
+            border: 3px solid #2a2d3e;
+            border-top: 3px solid #4a9eff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .error-message {
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #f44336;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .last-updated {
+            text-align: center;
+            color: #8b92b0;
+            font-size: 0.85rem;
+            margin-top: 1.5rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .movers-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .movers-table {
+                font-size: 0.85rem;
+            }
+            
+            .movers-table th,
+            .movers-table td {
+                padding: 0.5rem 0.3rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .movers-table .signal {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.5rem;
+            }
+            
+            .movers-section-header h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Add this HTML to your dashboard after your main stocks table -->
+<div class="movers-wrapper">
+    <div class="movers-header">
+        <h2>📊 S&P 500 Market Movers</h2>
+        <p>Real-time top performers and underperformers with AI-powered signals</p>
+    </div>
+    
+    <div class="movers-container">
+        <!-- Top Gainers Section -->
+        <div class="movers-section">
+            <div class="movers-section-header">
+                <span class="icon">🚀</span>
+                <h3>Top 10 Gainers</h3>
+            </div>
+            <div id="gainers-content">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading top gainers...</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Top Losers Section -->
+        <div class="movers-section">
+            <div class="movers-section-header">
+                <span class="icon">📉</span>
+                <h3>Top 10 Losers</h3>
+            </div>
+            <div id="losers-content">
+                <div class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>Loading top losers...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="last-updated" id="movers-last-updated"></div>
+</div>
+
+<script>
+    // Configuration
+    const MOVERS_API_URL = 'YOUR_LAMBDA_API_ENDPOINT_HERE'; // Replace with your actual API endpoint
+    const UPDATE_INTERVAL = 5 * 60 * 1000; // Update every 5 minutes
+    
+    /**
+     * Fetch movers data from your Lambda API
+     */
+    async function fetchMoversData() {
+        try {
+            const response = await fetch(MOVERS_API_URL);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            displayMovers(data);
+            
+        } catch (error) {
+            console.error('Error fetching movers:', error);
+            displayError('gainers-content', 'Unable to load top gainers data');
+            displayError('losers-content', 'Unable to load top losers data');
+        }
+    }
+    
+    /**
+     * Display gainers and losers in their respective tables
+     */
+    function displayMovers(data) {
+        const gainersContent = document.getElementById('gainers-content');
+        const losersContent = document.getElementById('losers-content');
+        const lastUpdated = document.getElementById('movers-last-updated');
+        
+        // Display gainers
+        if (data.gainers && data.gainers.length > 0) {
+            gainersContent.innerHTML = generateMoversTable(data.gainers);
+        } else {
+            gainersContent.innerHTML = '<p class="loading">No gainers data available</p>';
+        }
+        
+        // Display losers
+        if (data.losers && data.losers.length > 0) {
+            losersContent.innerHTML = generateMoversTable(data.losers);
+        } else {
+            losersContent.innerHTML = '<p class="loading">No losers data available</p>';
+        }
+        
+        // Update timestamp
+        if (data.timestamp) {
+            const updateTime = new Date(data.timestamp).toLocaleString();
+            lastUpdated.textContent = `Last updated: ${updateTime}`;
+        }
+    }
+    
+    /**
+     * Generate HTML table for movers
+     */
+    function generateMoversTable(stocks) {
+        let html = `
+            <table class="movers-table">
+                <thead>
+                    <tr>
+                        <th class="rank">#</th>
+                        <th>Ticker</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th>Signal</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+        
+        stocks.forEach((stock, index) => {
+            const changeClass = stock.change_pct >= 0 ? 'change-positive' : 'change-negative';
+            const signalClass = getSignalClass(stock.signal);
+            const changeSymbol = stock.change_pct >= 0 ? '+' : '';
+            
+            html += `
+                <tr>
+                    <td class="rank">${index + 1}</td>
+                    <td class="ticker">${stock.ticker}</td>
+                    <td class="price">$${stock.price ? stock.price.toFixed(2) : 'N/A'}</td>
+                    <td class="${changeClass}">
+                        ${changeSymbol}${stock.change_pct ? stock.change_pct.toFixed(2) : '0.00'}%
+                    </td>
+                    <td>
+                        <span class="signal ${signalClass}">${stock.signal}</span>
+                    </td>
+                </tr>
+            `;
+        });
+        
+        html += `
+                </tbody>
+            </table>
+        `;
+        
+        return html;
+    }
+    
+    /**
+     * Get CSS class for signal styling
+     */
+    function getSignalClass(signal) {
+        if (!signal) return 'signal-neutral';
+        
+        const signalLower = signal.toLowerCase();
+        
+        if (signalLower.includes('strong buy')) return 'signal-strong-buy';
+        if (signalLower.includes('weak buy')) return 'signal-weak-buy';
+        if (signalLower.includes('buy')) return 'signal-buy';
+        
+        if (signalLower.includes('strong sell')) return 'signal-strong-sell';
+        if (signalLower.includes('weak sell')) return 'signal-weak-sell';
+        if (signalLower.includes('sell')) return 'signal-sell';
+        
+        if (signalLower.includes('overbought')) return 'signal-overbought';
+        if (signalLower.includes('oversold')) return 'signal-oversold';
+        
+        return 'signal-neutral';
+    }
+    
+    /**
+     * Display error message
+     */
+    function displayError(elementId, message) {
+        const element = document.getElementById(elementId);
+        element.innerHTML = `
+            <div class="error-message">
+                <p><strong>⚠️ Error</strong></p>
+                <p>${message}</p>
+            </div>
+        `;
+    }
+    
+    /**
+     * Initialize - fetch data immediately and set up auto-refresh
+     */
+    function initMovers() {
+        fetchMoversData();
+        
+        // Auto-refresh every 5 minutes
+        setInterval(fetchMoversData, UPDATE_INTERVAL);
+        
+        console.log('Movers section initialized');
+    }
+    
+    // Start when page loads
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMovers);
+    } else {
+        initMovers();
+    }
+</script>
+
+</body>
+</html>

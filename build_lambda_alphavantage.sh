@@ -27,6 +27,8 @@ cp sentiment_analyzer.py lambda_package/
 cp email_sender.py lambda_package/
 cp lambda_function.py lambda_package/
 cp financial_metrics.py lambda_package/
+cp fast_sp500_movers.py lambda_package/
+cp sp500_movers.py lambda_package/
 
 # Create zip
 echo -e "${BLUE}🗜️  Creating zip...${NC}"
